@@ -29,7 +29,8 @@ namespace OrphanageMVC.Models
         public string pincode { get; set; }
         [DisplayName("Contact Number")]
         public string phoneNum { get; set; }
+        private string Password;
         [DisplayName("Password")]
-        public string password { get; set; }
+        public string password { get{return Password;} set{Password=Common.PassEnDt.Encrypt(value);} }
     }
 }
